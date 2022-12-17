@@ -3,6 +3,7 @@
 Примеры:
 - 1, 4, 8, 7, 5 -> 8
 - 78, 55, 36, 90, 2 -> 90"""
+import random
 
 """number1 = int(input('Введите первое число: '))
 number2 = int(input('Введите второе число: '))
@@ -22,17 +23,46 @@ if MAX < number5:
     MAX = number5
 print(MAX)"""
 
-my_list = [0, 0, 0, 0, 0]
+"""my_list = [0, 0, 0, 0, 0]
 
 for i in range(len(my_list)):
     my_list[i] = int(input('Введите число: '))
 print(my_list)
 
-MAX = my_list[i]
+MAX = my_list[0]
 
 for i in range(len(my_list)):
     if MAX < my_list[i]:
         MAX = my_list[i]
+print(MAX)"""
+
+
+"""my_list = []
+
+for i in range(5):
+    my_list.append(int(input('Введите число: ')))
+
+print(my_list)
+
+MAX = my_list[0]
+
+for i in my_list:
+    if i > MAX:
+        MAX = i
+print(MAX)"""
+
+my_list = []
+
+for i in range(5):
+    my_list.append(random.randint(0, 100))
+
+print(*my_list)
+
+MAX = my_list[0]
+
+for i in my_list:
+    if i > MAX:
+        MAX = i
 print(MAX)
 
 
