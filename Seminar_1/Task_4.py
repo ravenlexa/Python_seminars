@@ -13,6 +13,7 @@ else:
 
 n = input('Введите дробное число: ')
 n = n.split('.')
+print(n)
 
 if len(n) < 2:
     print('Целое')
