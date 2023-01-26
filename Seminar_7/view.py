@@ -10,7 +10,15 @@ def main_menu():
     print('Выберите пункт меню: ')
     for i in range(len(commands)):
         print(f'\t{i + 1}. {commands[i]}')
-    user_input = int(input('\nВведите пункт меню: '))
+    while True:
+        try:
+            user_input = int(input('\nВведите пункт меню: '))
+            if 0 < user_input < 9:
+                break
+            else:
+                print('\nВыберите пункты в диапазоне от 1 до 8')
+        except:
+            print('\nТолько цифры от 1 до 8!!!')
     return user_input
 
 
@@ -37,6 +45,31 @@ def new_contact():
     return name, phone, comment
 
 
+def new_contact_success():
+    print('Новый контакт добавлен!'
+          '\nВыберите 3 пункт для сохранения телефонной книги!')
+
+
 def find_contact():
     search = input('Введите искомое значение: ')
     return search
+
+
+def change_contact():
+    contact = input('Введите искомый контакт, который хотите изменить: ')
+    return contact
+
+
+def change_contact_success():
+    print('Контакт изменен!'
+          '\nВыберите 3 пункт для сохранения телефонной книги!')
+
+
+def del_contact():
+    contact = input('Введите искомый контакт, который хотите удалить: ')
+    return contact
+
+
+def del_contact_success():
+    print('Контакт удален!'
+          '\nВыберите 3 пункт для сохранения телефонной книги!')

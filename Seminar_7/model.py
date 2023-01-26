@@ -31,6 +31,21 @@ def save_phone_book():
         data = file.write('\n'.join(data))
 
 
+def change_contact(old_contact, new_contact):
+    for i in range(len(phone_book)):
+        if old_contact[0] == phone_book[i]:
+            phone_book[i] = new_contact
+            break
+
+
+def delete_contact(contact):
+    global phone_book
+    for i in range(len(phone_book)):
+        if contact[0] == phone_book[i]:
+            phone_book.remove(phone_book[i])
+            break
+
+
 def search_contact(search: str):
     global phone_book
     search_results = []

@@ -20,10 +20,22 @@ def start():
             case 4:
                 new = list(view.new_contact())
                 model.update_phone_book(new)
+                view.new_contact_success()
             case 5:
-                pass
+                contact_old = view.change_contact()
+                result = model.search_contact(contact_old)
+                view.show_contacts(result)
+                if result:
+                    contact_new = list(view.new_contact())
+                    model.change_contact(result, contact_new)
+                view.change_contact_success()
             case 6:
-                pass
+                contact = view.del_contact()
+                result = model.search_contact(contact)
+                view.show_contacts(result)
+                if result:
+                    model.delete_contact(result)
+                view.del_contact_success()
             case 7:
                 search = view.find_contact()
                 result = model.search_contact(search)
